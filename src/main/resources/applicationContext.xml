@@ -14,7 +14,8 @@
 
     <bean id="musicPlayer"
           class="org.semen.spring.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+<!--        <constructor-arg ref="musicBean"/> &lt;!&ndash; Передача зависимостей спрингу через ссылку&ndash;&gt;-->
+        <property name="music" ref="musicBean"/>
     </bean>
 
 </beans>
