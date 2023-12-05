@@ -10,10 +10,21 @@ import java.util.List;
 public class MusicPlayer {
 
     @Autowired
-    private Music music;
+    private ClassicalMusic classicalMusic;
+    private PopMusic popMusic;
+    private RockMusic rockMusic;
+
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, PopMusic popMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.popMusic = popMusic;
+        this.rockMusic = rockMusic;
+    }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + popMusic.getSong());
+        System.out.println("Playing: " + rockMusic.getSong());
     }
 
 
