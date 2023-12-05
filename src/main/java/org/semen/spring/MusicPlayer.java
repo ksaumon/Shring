@@ -21,10 +21,13 @@ public class MusicPlayer {
         this.rockMusic = rockMusic;
     }
 
-    public void playMusic() {
-        System.out.println("Playing: " + classicalMusic.getSong());
-        System.out.println("Playing: " + popMusic.getSong());
-        System.out.println("Playing: " + rockMusic.getSong());
+    public String playMusic() {
+        String p = "Playing: " + popMusic.getSong();
+        String c = "Playing: " + classicalMusic.getSong();
+        String r = "Playing: " + rockMusic.getSong();
+        return c + p + r;
+
+
     }
 
 
