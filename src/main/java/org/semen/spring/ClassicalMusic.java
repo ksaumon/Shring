@@ -2,8 +2,6 @@ package org.semen.spring;
 
 import org.springframework.stereotype.Component;
 
-@Component// данная анатация говорит спринг что из класса ClassicalMusic нужно создать бин в скобках можно прописать
-        //айди например @Component("musicBean") или оставить как есть тогда айди будет classicalMusic класс с маленькой
 public class ClassicalMusic implements Music {
     @Override
     public String getSong() {

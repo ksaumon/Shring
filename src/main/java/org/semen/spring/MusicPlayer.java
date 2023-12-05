@@ -8,16 +8,19 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
-    private final ClassicalMusic classicalMusic;
+    private Music music;
 
-    @Autowired// анатация которая внедряет зависимости использование конструктор,метод,поля, а с полями приват
-    //раьотает через рефликсию
-    public MusicPlayer(ClassicalMusic classicalMusic) {
-        this.classicalMusic = classicalMusic;
+    public MusicPlayer(Music music) {
+        this.music = music;
+    }
+
+    @Autowired
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + music.getSong());
     }
 
 
