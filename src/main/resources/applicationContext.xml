@@ -10,31 +10,57 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-              class="org.semen.spring.RockMusic">
+          class="org.semen.spring.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy"
+            factory-method="getClassicalMusic"><!-- Говорим спрингу что обьект создаем через getClassicalMusic
+            по умолчанию singleton поэтому обьект создасца 1 раз-->
     </bean>
 
-<!--    <bean id="musicBean1"-->
-<!--          class="org.semen.spring.ClassicalMusic">-->
-<!--&lt;!&ndash;        <constructor-arg value="Neil"/>&ndash;&gt;-->
+<!--    <bean id="musicPlayer"-->
+<!--          class="org.semen.spring.MusicPlayer">-->
+<!--    <property name="music" ref="musicBean"/>-->
+<!--    <property name="name" value="${musicPlayer.name}"/>-->
+<!--    <property name="volume" value="${musicPlayer.volume}"/>-->
 <!--    </bean>-->
 
-<!--    <bean id="musicBean2"-->
-<!--          class="org.semen.spring.RockMusic">-->
-<!--    </bean>-->
-
-<!--    <bean id="musicBean3"-->
-<!--          class="org.semen.spring.PopMusic">-->
-<!--    </bean>-->
+</beans>
 
 
-        <bean id="musicPlayer"
-          class="org.semen.spring.MusicPlayer"
-            scope="prototype"> <!-- по умолчанию scope singleton(ссылка на один неизменяемый обьект), prototype ссылки
-             на разные обьекты  изменять по необходимости-->
-<!--        <constructor-arg ref="musicBean"/> &lt;!&ndash; Передача зависимостей спрингу через ссылку&ndash;&gt;-->
-        <property name="music" ref="musicBean"/>
+        <!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 
-<!--        <property name="name" value="Som name"/>-->
+        <!--    <bean id="musicBean"-->
+        <!--              class="org.semen.spring.RockMusic">-->
+        <!--    </bean>-->
+
+        <!--        <bean id="musicPlayer"-->
+        <!--          class="org.semen.spring.MusicPlayer">-->
+        <!--        <property name="music" ref="musicBean"/>-->
+        <!--            <property name="name" value="${musicPlayer.name}"/>-->
+        <!--            <property name="volume" value="${musicPlayer.volume}"/>-->
+        <!--        </bean>-->
+
+        <!--</beans>-->
+
+
+
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+
+            <!--    <bean id="musicBean1"-->
+            <!--          class="org.semen.spring.ClassicalMusic">-->
+            <!--&lt;!&ndash;        <constructor-arg value="Neil"/>&ndash;&gt;-->
+            <!--    </bean>-->
+
+            <!--    <bean id="musicBean2"-->
+            <!--          class="org.semen.spring.RockMusic">-->
+            <!--    </bean>-->
+
+            <!--    <bean id="musicBean3"-->
+            <!--          class="org.semen.spring.PopMusic">-->
+            <!--    </bean>-->
+
+
+            <!--        <property name="name" value="Som name"/>-->
 <!--        <property name="volume" value="50"/>-->
 
 <!--    <bean id="musicPlayer"-->
@@ -47,9 +73,30 @@
 <!--            </list>-->
 <!--        </property>-->
 
-        <property name="name" value="${musicPlayer.name}"/> <!-- Подставляем значение из файла musicPlayer.properties
-        с помощью 10 строчки -->
-        <property name="volume" value="${musicPlayer.volume}"/>
-            </bean>
+<!--        <property name="name" value="${musicPlayer.name}"/> &lt;!&ndash; Подставляем значение из файла musicPlayer.properties-->
+<!--        с помощью 10 строчки &ndash;&gt;-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--            </bean>-->
 
-        </beans>
+<!--        </beans>-->
+
+
+
+<!--<context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+
+<!--<bean id="musicBean"-->
+<!--      class="org.semen.spring.RockMusic">-->
+<!--</bean>-->
+
+<!--<bean id="musicPlayer"-->
+<!--      class="org.semen.spring.MusicPlayer"-->
+<!--      scope="prototype"> &lt;!&ndash; по умолчанию scope singleton(ссылка на один неизменяемый обьект), prototype ссылки-->
+<!--             на разные обьекты  изменять по необходимости&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg ref="musicBean"/> &lt;!&ndash; Передача зависимостей спрингу через ссылку&ndash;&gt;&ndash;&gt;-->
+<!--<property name="music" ref="musicBean"/>-->
+<!--<property name="name" value="${musicPlayer.name}"/> &lt;!&ndash; Подставляем значение из файла musicPlayer.properties-->
+<!--        с помощью 10 строчки &ndash;&gt;-->
+<!--<property name="volume" value="${musicPlayer.volume}"/>-->
+<!--</bean>-->
+
+<!--        </beans>-->
