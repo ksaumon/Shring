@@ -7,24 +7,26 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+        <context:component-scan base-package="org.semen.spring"/>
+</beans>
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 
-    <bean id="musicBean"
-          class="org.semen.spring.ClassicalMusic"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy"
-            factory-method="getClassicalMusic"><!-- Говорим спрингу что обьект создаем через getClassicalMusic
-            по умолчанию singleton поэтому обьект создасца 1 раз-->
-    </bean>
-
-<!--    <bean id="musicPlayer"-->
-<!--          class="org.semen.spring.MusicPlayer">-->
-<!--    <property name="music" ref="musicBean"/>-->
-<!--    <property name="name" value="${musicPlayer.name}"/>-->
-<!--    <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    <bean id="musicBean"-->
+<!--          class="org.semen.spring.ClassicalMusic"-->
+<!--            init-method="doMyInit"-->
+<!--            destroy-method="doMyDestroy"-->
+<!--            factory-method="getClassicalMusic">&lt;!&ndash; Говорим спрингу что обьект создаем через getClassicalMusic-->
+<!--            по умолчанию singleton поэтому обьект создасца 1 раз&ndash;&gt;-->
 <!--    </bean>-->
 
-</beans>
+<!--&lt;!&ndash;    <bean id="musicPlayer"&ndash;&gt;-->
+<!--&lt;!&ndash;          class="org.semen.spring.MusicPlayer">&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="music" ref="musicBean"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="name" value="${musicPlayer.name}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="volume" value="${musicPlayer.volume}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+<!--</beans>-->
 
 
         <!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
