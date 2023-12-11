@@ -1,6 +1,7 @@
 package org.semen.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,28 +9,20 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
-
+    private Music music;
+    private Music music1;
+    private Music music2;
     @Autowired
-    private ClassicalMusic classicalMusic;
-    private PopMusic popMusic;
-    private RockMusic rockMusic;
-
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, PopMusic popMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.popMusic = popMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(@Qualifier("rockMusic") Music music, @Qualifier("classicalMusic")Music music1,
+                       @Qualifier("popMusic")Music music2) {
+        this.music = music;
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
     public String playMusic() {
-        String p = "Playing: " + popMusic.getSong();
-        String c = "Playing: " + classicalMusic.getSong();
-        String r = "Playing: " + rockMusic.getSong();
-        return c + p + r;
-
-
+        return "Playing: " + music.getSong() + "," + music1.getSong() + "," + music2.getSong();
     }
-
 
 
 //    private List<Music> musicList = new ArrayList<>();
