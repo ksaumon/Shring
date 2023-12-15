@@ -27,4 +27,35 @@ public class FirstController {
         model.addAttribute("message", "Hello " + name + " " + surname);
         return "first/goodbye";
     }
+
+    @GetMapping("/calculator")
+    public String calculator(@RequestParam(value = "a", required = false) Integer a,
+                             @RequestParam(value = "b", required = false) Integer b,
+                             @RequestParam(value = "action", required = false) String action, Model model) {
+        if (a == null || b == null) {
+            model.addAttribute("error", "Please provide valid values for 'a' and 'b'");
+            return "first/calculator";
+        }
+        double result;
+        switch (action) {
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / (double)b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "+":
+                result = a + b;
+                break;
+            default:
+                result = 0;
+                break;
+        }
+        model.addAttribute("result", result);
+        return "first/calculator";
+    }
+
 }

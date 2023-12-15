@@ -10,7 +10,8 @@
 
 <p>Home screen!)</p>
 
-<a href="/hello">Say hello</a> or <a href="/goodbye">Say goodbye</a> or <a href="/exit">Exit</a>
+<a href="/hello">Say hello</a> or <a href="/goodbye">Say goodbye</a> or <a href="/calculator">Calculator</a>
+or <a href="/exit">Exit</a>
 </body>
 
 </html>
