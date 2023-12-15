@@ -12,6 +12,8 @@
 
 <a href="/hello">Say hello</a> or <a href="/goodbye">Say goodbye</a> or <a href="/calculator">Calculator</a>
 or <a href="/exit">Exit</a>
+<br>
+or <a href="/people">People</a>
 </body>
 
 </html>
