@@ -14,6 +14,8 @@
 or <a href="/exit">Exit</a>
 <br>
 or <a href="/people">People</a>
+<br>
+or <a href="/test-batch-update">Test</a>
 </body>
 
 </html>
