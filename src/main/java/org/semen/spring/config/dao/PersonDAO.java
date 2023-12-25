@@ -30,8 +30,11 @@ public class PersonDAO {
     }
 
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO Person VALUES(1, ?, ?, ?)", person.getName(), person.getAge(),
+        jdbcTemplate.update("INSERT INTO Person(name, age, email) VALUES(?, ?, ?)", person.getName(), person.getAge(),
                     person.getEmail());
+        //данное изменение позволяет генирировать уникальный id с помощью команды в постгрес при создании таблици
+        //create table Person (id SERIAL, name varchar, age int, email varchar) где SERIAL это синтаксический сахар
+        // который при использовании создает sequence для итерации выдранного поля
     }
 
     public void update(int id, Person updatedPerson) {
