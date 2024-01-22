@@ -1,6 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <title>My app</title>
@@ -8,14 +8,16 @@
 
 <body>
 
-<p>Home screen!)</p>
+<p>Домашнея страница!)</p>
 
-<a href="/hello">Say hello</a> or <a href="/goodbye">Say goodbye</a> or <a href="/calculator">Calculator</a>
-or <a href="/exit">Exit</a>
+<a href="/hello">Скажи привет</a> или <a href="/goodbye">скажи пока</a> или <a href="/calculator">Калькулятор</a>
+или <a href="/exit">Выход</a>
 <br>
-or <a href="/people">People</a>
+или <a href="/people">Люди</a>
 <br>
-or <a href="/test-batch-update">Test</a>
+или <a href="/test-batch-update">Тест</a>
+<br>
+или <a href="/admin">Админ</a>
 </body>
 
 </html>

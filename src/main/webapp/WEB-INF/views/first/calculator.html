@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calculator</title>
+    <title>Калькулятор в строке </title>
 </head>
 <body>
-The result is <p th:text="${result}"> </p>
+<a>для работы программы необходимо в строке поиска после http://localhost:8080/calculator ввести:</a>
 <br>
-<a href="/hello">Say hello</a> or <a href="/goodbye">Say goodbye</a> or <a href="/exit">Exit</a>
+<a> ?a=число&b=число&action=нужный,знак(*,/,-,+)</a>
+<br>
+<a>Пример ?a=3&b=5&action=*</a>
+<br>
+Результат: <p th:text="${result}"></p>
+<br>
+<a href="/hello">Скажи привет</a> или <a href="/goodbye">Скажи пока</a> или <a href="/exit">Выход</a>
+<br>
+или <a href="http://localhost:8080/">Домашнея страница!)</a>
 </body>
 </html>
